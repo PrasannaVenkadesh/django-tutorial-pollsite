@@ -1,7 +1,7 @@
 # Django settings for pollsite project.
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+TEMPLATE_DEBUG = DEBUG 
 
 ADMINS = (
     # ('pras', 'prasmailme@gmail.com'),
@@ -111,6 +111,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    '/home/pras/Code/Deployed/djangop/pollsite/templates',
 )
 
 INSTALLED_APPS = (

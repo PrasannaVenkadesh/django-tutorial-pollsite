@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'pollsite.views.home', name='home'),
     # url(r'^pollsite/', include('pollsite.foo.urls')),
+    url(r'^polls/', include('polls.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

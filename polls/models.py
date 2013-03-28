@@ -14,6 +14,8 @@ class Poll(models.Model):
 
 	def was_recently_published(self):
 		return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+	was_recently_published.admin_order_field = 'pub_date'
+	was_recently_published.short_description = 'Published Recently'
 
 class Choice(models.Model):
 	
