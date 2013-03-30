@@ -1,0 +1,8 @@
+<h1>{{ poll.question }}</h1>
+{% if poll.choice_set.count %}
+	{% for choice in poll.choice_set.all %}
+	<input type=radio name='choice'>{{ choice.choice_text }}<br>
+	{% endfor %}
+{% else %}
+	<p>No Choices available, Try later</p>
+{% endif %}
