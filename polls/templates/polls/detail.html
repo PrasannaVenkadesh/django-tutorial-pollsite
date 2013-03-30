@@ -1,8 +1,17 @@
 <h1>{{ poll.question }}</h1>
+
+{% if error_message %}
+	<p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
 {% if poll.choice_set.count %}
-	{% for choice in poll.choice_set.all %}
-	<input type=radio name='choice'>{{ choice.choice_text }}<br>
-	{% endfor %}
+	<form action='{% url "polls:vote" poll.id %}' method='post'>
+		{% csrf_token %}
+		{% for choice in poll.choice_set.all %}
+		<input type=radio name='choice' id='choice{{ forloop.counter }}' value={{ choice.id }}>{{ choice.choice_text }}<br>
+		{% endfor %}
+		<input type=submit value='Vote'>
+	</form>
 {% else %}
 	<p>No Choices available, Try later</p>
 {% endif %}
